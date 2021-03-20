@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="game" default="compile" basedir=".">
+    <property name="dir.src" value="App" />
+    <property name="dir.build" value="App\build" />
+    <target name="compile" description="コンパイル" >
+        <antcall target="buildApp"/>
+    </target>
+    
+    <target name="buildApp">
+        <antcall target="mkdir" />
+        <javac srcdir="${dir.src}"
+            destdir="${dir.build}"
+            encoding="UTF-8"
+            includeAntRuntime="false"
+            debug="true"/>
+    </target>
+    <target name="run">
+        <exec executable="java">
+            <arg value="App/Main" />
+        </exec>
+
+    </target>
+    <target name="clean">
+        <delete dir="${dir.build}" />
+    </target>
+    <target name="mkdir">
+        <mkdir dir="${dir.build}" />
+    </target>
+</project>

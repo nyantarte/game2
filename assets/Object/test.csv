@@ -1,0 +1,4 @@
+type,object
+name,test
+state_ex,A,84,99,NONE,A
+state_ex,B,183,255,NONE,A
